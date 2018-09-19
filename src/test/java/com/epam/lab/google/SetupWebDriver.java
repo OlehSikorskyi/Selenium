@@ -6,7 +6,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 
 public class SetupWebDriver {
-
     public WebDriver driver;
     public static final String USER_DIR = "user.dir";
     public static final String CHROME_DRIVER_PATH = "\\src\\main\\resources\\chromedriver.exe";
