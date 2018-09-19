@@ -1,9 +1,9 @@
 package com.epam.lab.google;
 
-import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 
 public class SetupWebDriver {
     public WebDriver driver;

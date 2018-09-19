@@ -3,7 +3,6 @@ package com.epam.lab.google;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -14,9 +13,6 @@ public class GoogleSimpleTest extends SetupWebDriver {
 
     @Test
     public void shouldNavigateToGoogleWebSiteAndSearchApple() {
-        System.setProperty("webdriver.chrome.driver", System.getProperty(USER_DIR) + CHROME_DRIVER_PATH);
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
         driver.get("https://www.google.com.ua/");
         WebElement searchField = driver.findElement(By.xpath("//input[@name=\"q\"]"));
         searchField.clear();
