@@ -7,16 +7,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import java.util.concurrent.TimeUnit;
 
 @SuppressWarnings("ALL")
 public class GmailSendEmailTest extends WebDriverSetting {
     private static final String EMAIL = "oleh.sikorskyi@gmail.com";
     private static final String PASS = "g3t7UZ?Rq-";
-    private static long timeouts = 30;
     private static String emailRecipients = "helgi.sikora@gmail.com";
     private static String emailSubject = "no-reply: New mail via gmail using Selenium Webdriver";
-    private static String emailBody = " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+    private static String emailBody = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
     private static int lettersQuantityBeforeSendingEmail;
     private static int lettersQuantityAfterSendingEmail;
     private static String accountGoogleUrl = "https://accounts.google.com/";
@@ -39,26 +37,21 @@ public class GmailSendEmailTest extends WebDriverSetting {
         userName.clear();
         userName.sendKeys(EMAIL);
         userName.sendKeys(Keys.RETURN);
-        driver.manage().timeouts().implicitlyWait(timeouts, TimeUnit.SECONDS);
         WebElement password = driver.findElement(By.cssSelector(passwordLocator));
         password.sendKeys(PASS);
         password.sendKeys(Keys.RETURN);
-        driver.manage().timeouts().implicitlyWait(timeouts, TimeUnit.SECONDS);
         WebElement gmailIcon = driver.findElement(By.xpath(gmailIconLocator));
         gmailIcon.click();
 
         //should go to "Sent" folder and check actual sent letters quantity
-        driver.manage().timeouts().implicitlyWait(timeouts, TimeUnit.SECONDS);
         WebElement sentLink = driver.findElement(By.xpath(sentLinkLocator));
         sentLink.click();
-        driver.manage().timeouts().implicitlyWait(timeouts, TimeUnit.SECONDS);
         WebElement letterCounter = driver.findElement(By.xpath(letterCounterLocator));
         lettersQuantityBeforeSendingEmail = Integer.parseInt(letterCounter.getText());
 
         //should create new letter
         WebElement composeButton = driver.findElement(By.xpath(composeButtonLocator));
         composeButton.click();
-        driver.manage().timeouts().implicitlyWait(timeouts, TimeUnit.SECONDS);
         WebElement recipient = driver.findElement(By.xpath(recipientLocator));
         recipient.sendKeys(emailRecipients);
         WebElement subjectBox = driver.findElement(By.xpath(subjectBoxLocator));

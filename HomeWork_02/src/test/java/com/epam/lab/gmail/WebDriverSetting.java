@@ -5,16 +5,20 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 
+import java.util.concurrent.TimeUnit;
+
 public class WebDriverSetting {
-    public WebDriver driver;
-    public static final String USER_DIR = "user.dir";
-    public static final String CHROME_DRIVER_PATH = "\\src\\main\\resources\\chromedriver.exe";
+    private static final String USER_DIR = "user.dir";
+    private static final String CHROME_DRIVER_PATH = "\\src\\main\\resources\\chromedriver.exe";
+    static long timeouts = 30;
+    WebDriver driver;
 
     @BeforeClass
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", System.getProperty(USER_DIR) + CHROME_DRIVER_PATH);
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(timeouts, TimeUnit.SECONDS);
     }
 
     @AfterTest
