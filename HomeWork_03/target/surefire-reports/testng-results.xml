@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="POMGmail" duration-ms="34179" started-at="2018-09-24T09:26:11Z" finished-at="2018-09-24T09:26:46Z">
+    <groups>
+    </groups>
+    <test name="deleteInboxMessage" duration-ms="34179" started-at="2018-09-24T09:26:11Z" finished-at="2018-09-24T09:26:46Z">
+      <class name="com.epam.lab.POMGmail.Tests.DeleteInboxMessageTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.epam.lab.POMGmail.Tests.DeleteInboxMessageTest@5d624da6]" name="setUp" is-config="true" duration-ms="6555" started-at="2018-09-24T12:26:11Z" finished-at="2018-09-24T12:26:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="deleteInboxMessage(java.lang.String, java.lang.String)[pri:0, instance:com.epam.lab.POMGmail.Tests.DeleteInboxMessageTest@5d624da6]" name="deleteInboxMessage" duration-ms="25912" started-at="2018-09-24T12:26:18Z" finished-at="2018-09-24T12:26:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[oleh.sikorskyi@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[g3t7UZ?Rq-]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteInboxMessage -->
+        <test-method status="PASS" signature="close()[pri:0, instance:com.epam.lab.POMGmail.Tests.DeleteInboxMessageTest@5d624da6]" name="close" is-config="true" duration-ms="1700" started-at="2018-09-24T12:26:44Z" finished-at="2018-09-24T12:26:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- com.epam.lab.POMGmail.Tests.DeleteInboxMessageTest -->
+    </test> <!-- deleteInboxMessage -->
+  </suite> <!-- POMGmail -->
+</testng-results>
