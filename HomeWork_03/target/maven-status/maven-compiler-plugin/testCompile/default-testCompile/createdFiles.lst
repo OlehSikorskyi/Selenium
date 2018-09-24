@@ -1,0 +1,6 @@
+com\epam\lab\POMGmail\PageObjects\MainInboxPage.class
+com\epam\lab\POMGmail\PageObjects\LoginPage.class
+com\epam\lab\POMGmail\PageObjects\WebElementsInitialization.class
+com\epam\lab\POMGmail\WebDriverSetting.class
+com\epam\lab\POMGmail\ConfigFileReader.class
+com\epam\lab\POMGmail\Tests\DeleteInboxMessageTest.class
