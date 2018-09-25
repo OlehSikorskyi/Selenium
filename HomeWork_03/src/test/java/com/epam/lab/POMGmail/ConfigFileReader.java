@@ -39,7 +39,7 @@ public class ConfigFileReader {
         else throw new RuntimeException("implicitlyWait not specified in the Configuration.properties file.");
     }
 
-    public String getApplicationUrl() {
+    public String getWebSiteUrl() {
         String gmailUrl = properties.getProperty("gmail.url");
         if (gmailUrl != null) return gmailUrl;
         else throw new RuntimeException("gmailUrl not specified in the Configuration.properties file.");

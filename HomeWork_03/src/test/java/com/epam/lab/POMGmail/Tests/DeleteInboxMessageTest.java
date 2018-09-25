@@ -15,7 +15,7 @@ public class DeleteInboxMessageTest extends WebDriverSetting {
     @Test
     public void deleteInboxMessage(String login, String password) {
         configFileReader = new ConfigFileReader();
-        driver.get(configFileReader.getApplicationUrl());
+        driver.get(configFileReader.getWebSiteUrl());
         LoginPage loginPage = new LoginPage(driver);
         loginPage.loginToGmail(login, password);
         MainInboxPage mainInboxPage = new MainInboxPage(driver);

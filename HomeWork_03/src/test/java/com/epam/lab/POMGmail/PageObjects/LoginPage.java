@@ -13,7 +13,7 @@ public class LoginPage extends WebElementsInitialization {
     @FindBy(id = "identifierId")
     private WebElement userName;
 
-    @FindBy(css = "input[name=\"password\"]")
+    @FindBy(css = "input[name='password']")
     private WebElement password;
 
     public LoginPage(WebDriver driver) {

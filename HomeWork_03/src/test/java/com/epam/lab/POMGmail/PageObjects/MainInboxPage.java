@@ -17,19 +17,19 @@ public class MainInboxPage extends WebElementsInitialization {
     public int emailQuantityAfterDeleting;
     private WebDriverWait wait = new WebDriverWait(driver, 30);
 
-    @FindBy(xpath = "//div[@class=\"J-J5-Ji amH J-JN-I\"]/span/span[last()]")
+    @FindBy(xpath = "//div[@class='J-J5-Ji amH J-JN-I']/span/span[last()]")
     private WebElement initialInboxEmailQuantity;
 
-    @FindBy(css = "table.F.cf.zt tbody div[role=\"checkbox\"]")
+    @FindBy(css = "table.F.cf.zt tbody div[role='checkbox']")
     private List<WebElement> checkboxList;
 
-    @FindBy(css = "div[act=\"10\"]")
+    @FindBy(css = "div[act='10']")
     private WebElement deleteButton;
 
     @FindBy(id = "link_undo")
     private WebElement undoLink;
 
-    @FindBy(xpath = "//div[@class=\"J-J5-Ji amH J-JN-I\"]/span/span[last()]")
+    @FindBy(xpath = "//div[@class='J-J5-Ji amH J-JN-I']/span/span[last()]")
     private WebElement finalInboxEmailQuantity;
 
     private void checkInitialInboxEmailQuantity() {
@@ -38,7 +38,7 @@ public class MainInboxPage extends WebElementsInitialization {
     }
 
     private void selectThreeFirstInboxEmail() {
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("table.F.cf.zt tbody div[role=\"checkbox\"]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("table.F.cf.zt tbody div[role='checkbox']")));
         checkboxList.get(0).click();
         checkboxList.get(1).click();
         checkboxList.get(2).click();
@@ -47,7 +47,7 @@ public class MainInboxPage extends WebElementsInitialization {
 
     private void deleteSelectedEmail() {
         deleteButton.click();
-        LOG.info("> Selected email had been deleted");
+        LOG.info("> Selected email has been deleted");
     }
 
     private void cancelSendingEmail() {
