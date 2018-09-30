@@ -1,6 +1,6 @@
 package com.epam.lab.businessobjects;
 
-import com.epam.lab.WebDriverSetting;
+import com.epam.lab.utils.WebDriverSetting;
 import com.epam.lab.pageobject.InboxPage;
 
 public class InboxPageBO extends WebDriverSetting {

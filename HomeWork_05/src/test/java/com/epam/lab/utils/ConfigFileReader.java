@@ -1,4 +1,4 @@
-package com.epam.lab;
+package com.epam.lab.utils;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

@@ -1,5 +1,6 @@
 package com.epam.lab.pageobject;
 
+import com.epam.lab.utils.ExtendedFieldDecorator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 

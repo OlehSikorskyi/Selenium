@@ -1,4 +1,4 @@
-package com.epam.lab.pageobject;
+package com.epam.lab.utils;
 
 import com.epam.lab.elements.AbstractElement;
 import org.openqa.selenium.SearchContext;

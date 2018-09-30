@@ -35,39 +35,31 @@ public class InboxPage extends WebElementsInitialization {
     private Label finalInboxEmailQuantity;
 
     public void checkInitialInboxEmailQuantity() {
-        emailInitialQuantity = Integer.parseInt(initialInboxEmailQuantity.getText());
         LOG.info(String.format("> Initial inbox Email quantity is: %d", emailInitialQuantity));
+        emailInitialQuantity = Integer.parseInt(initialInboxEmailQuantity.getText());
     }
 
-    public void selectThreeFirstInboxEmail(int ...args){
+    public void selectThreeFirstInboxEmail(int... checkBoxIndexes) {
         LOG.info("> There are three inbox email was selected");
-        for (int i : args) {
+        for (int i : checkBoxIndexes) {
             checkboxList.get(i).setChecked(true);
         }
     }
 
     public void deleteSelectedEmail() {
-        deleteButton.click();
         LOG.info("> Selected email has been deleted");
+        deleteButton.click();
     }
 
     public void clickUndoButton() {
-        undoLink.click();
         LOG.info("> Deletion canceled");
+        undoLink.click();
     }
 
     public void checkInboxEmailQuantityAfterDeleting() {
+        LOG.info(String.format("> Quantity of inbox Email after deleting is: %d", emailQuantityAfterDeleting));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("span.bAq")));
         emailQuantityAfterDeleting = Integer.parseInt(finalInboxEmailQuantity.getText());
-        LOG.info(String.format("> Quantity of inbox Email after deleting is: %d", emailQuantityAfterDeleting));
-    }
-
-    public void selectThreeEmailDeleteAndPressUndoButton() {
-        checkInitialInboxEmailQuantity();
-        selectThreeFirstInboxEmail(0,1,2);
-        deleteSelectedEmail();
-        clickUndoButton();
-        checkInboxEmailQuantityAfterDeleting();
     }
 
     public InboxPage(WebDriver driver) {
