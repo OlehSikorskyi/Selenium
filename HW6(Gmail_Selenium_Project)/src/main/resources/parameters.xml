@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Business Object Gmail" data-provider-thread-count="3" parallel="tests" >
+<suite name="Business Object Gmail" data-provider-thread-count="3" parallel="classes" >
+    <parameter name="login-first" value="oleh.sikorskyi@gmail.com"/>
+    <parameter name="password-first" value="g3t7UZ?Rq-"/>
+    <parameter name="login-second" value="oleh.sikorskyi01@gmail.com"/>
+    <parameter name="password-second" value="g3t7UZg3t7UZ"/>
+    <parameter name="login-third" value="oleh.sikorskyi02@gmail.com"/>
+    <parameter name="password-third" value="7UZg3t7UZ-"/>
+    <parameter name="login-fourth" value="oleh.sikorskyi03@gmail.com"/>
+    <parameter name="password-fourth" value="7U3t7U457Z-"/>
+    <parameter name="login-fifth" value="oleh.sikorskyi04@gmail.com"/>
+    <parameter name="password-fifth" value="t7Udvv457Z-"/>
     <test name="deleteInboxMessage">
-        <parameter name="login-first" value="oleh.sikorskyi@gmail.com" />
-        <parameter name="password-first" value="g3t7UZ?Rq-" />
-        <parameter name="login-second" value="oleh.sikorskyi01@gmail.com" />
-        <parameter name="password-second" value="g3t7UZg3t7UZ" />
-        <parameter name="login-third" value="oleh.sikorskyi02@gmail.com" />
-        <parameter name="password-third" value="7UZg3t7UZ-" />
-        <parameter name="login-fourth" value="oleh.sikorskyi03@gmail.com" />
-        <parameter name="password-fourth" value="7U3t7U457Z-" />
-        <parameter name="login-fifth" value="oleh.sikorskyi04@gmail.com" />
-        <parameter name="password-fifth" value="t7Udvv457Z-" />
         <classes>
             <class name="com.epam.lab.DeleteInboxMessageTest">
             </class>
