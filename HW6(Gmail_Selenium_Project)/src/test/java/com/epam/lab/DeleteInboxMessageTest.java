@@ -20,19 +20,6 @@ public class DeleteInboxMessageTest {
     private LoginPageBO loginPageBO;
     private InboxPageBO inboxPageBO;
 
-
-   /* @DataProvider(name = "userData", parallel = true)
-    public Object[][] getUserData(ITestContext context) {
-        Map<String, String> suiteParams = context.getCurrentXmlTest().getSuite().getParameters();
-
-        return new Object[][]{{suiteParams.get("login-first"), suiteParams.get("password-first")},
-                {suiteParams.get("login-second"), suiteParams.get("password-second")},
-                {suiteParams.get("login-third"), suiteParams.get("password-third")},
-                {suiteParams.get("login-fourth"), suiteParams.get("password-fourth")},
-                {suiteParams.get("login-fifth"), suiteParams.get("password-fifth")},
-        };
-    }*/
-
     @DataProvider(name = "userData", parallel = true)
     public Object[][] getUserData() {
         return new Object[][]{{"oleh.sikorskyi@gmail.com", "g3t7UZ?Rq-"},
@@ -45,8 +32,8 @@ public class DeleteInboxMessageTest {
 
     @Test(dataProvider = "userData", threadPoolSize = 3)
     public void deleteInboxMessage(String login, String password) {
-        ConfigFileReader configFileReader = new ConfigFileReader();
-        WebDriver driver = WebDriverPool.getDriver();
+        configFileReader = new ConfigFileReader();
+        WebDriver driver = WebDriverPool.getInstance().getDriver();
         driver.get(configFileReader.getWebSiteUrl());
         loginPageBO = new LoginPageBO(driver);
         inboxPageBO = new InboxPageBO(driver);
@@ -54,7 +41,17 @@ public class DeleteInboxMessageTest {
         inboxPageBO.selectThreeEmail();
         inboxPageBO.deleteEmail();
         inboxPageBO.cancelDeletingEmail();
-        WebDriverPool.removeDriver();
         Assert.assertEquals(emailInitialQuantity, emailQuantityAfterDeleting);
     }
+    /* @DataProvider(name = "userData", parallel = true)
+     public Object[][] getUserData(ITestContext context) {
+         Map<String, String> suiteParams = context.getCurrentXmlTest().getSuite().getParameters();
+
+         return new Object[][]{{suiteParams.get("login-first"), suiteParams.get("password-first")},
+                 {suiteParams.get("login-second"), suiteParams.get("password-second")},
+                 {suiteParams.get("login-third"), suiteParams.get("password-third")},
+                 {suiteParams.get("login-fourth"), suiteParams.get("password-fourth")},
+                 {suiteParams.get("login-fifth"), suiteParams.get("password-fifth")},
+         };
+     }*/
 }

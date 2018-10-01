@@ -13,7 +13,14 @@ public class WebDriverPool {
     private WebDriverPool() {
     }
 
-    private static ThreadLocal<WebDriver> webDriverPool = new ThreadLocal<WebDriver>() {
+    private static WebDriverPool instance = new WebDriverPool();
+
+    public static WebDriverPool getInstance()
+    {
+        return instance;
+    }
+
+    private static  ThreadLocal<WebDriver> webDriverPool = new ThreadLocal<WebDriver>(){
         @Override
         protected WebDriver initialValue() {
             ConfigFileReader configFileReader = new ConfigFileReader();
@@ -25,17 +32,17 @@ public class WebDriverPool {
         }
     };
 
-    public static WebDriver getDriver() {
+    public WebDriver getDriver() {
         return webDriverPool.get();
     }
 
-    public static void removeDriver() {
+    public void removeDriver() {
         webDriverPool.get().quit();
         webDriverPool.remove();
     }
 
     @AfterClass
     public void tearDown() {
-        WebDriverPool.removeDriver();
+        WebDriverPool.getInstance().removeDriver();
     }
 }
